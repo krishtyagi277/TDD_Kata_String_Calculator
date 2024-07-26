@@ -1,4 +1,4 @@
-Yes, TDD Kata 1 - String Calculator is a popular coding exercise designed to practice Test-Driven Development (TDD) principles. The exercise involves implementing a simple string calculator that can take a string of numbers and return their sum. Here's a breakdown of the typical steps involved:
+TDD Kata 1 - String Calculator is a popular coding exercise designed to practice Test-Driven Development (TDD) principles. The exercise involves implementing a simple string calculator that can take a string of numbers and return their sum. Here's a breakdown of the typical steps involved:
 
 \*\*Create a simple String calculator with a method add(String numbers).
 
@@ -26,3 +26,7 @@ For example, add("1,2,3,4") should return 10.
 6.  Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
 
 7.  Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1**_2_**3” should return 6
+
+8.  Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[\*][%]\n1\*2%3” should return 6.
+    ————————————————————————————————
+9.  make sure you can also handle multiple delimiters with length longer than one char
