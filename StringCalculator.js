@@ -10,11 +10,10 @@ class StringCalculator {
 
     const numberArr = numbers.split(",");
 
-    let sum = 0;
-
-    for (const num of numberArr) {
-      sum += parseInt(num);
-    }
+    const sum = numberArr.reduce(
+      (currSum, num) => (currSum += parseInt(num)),
+      0
+    );
 
     return sum;
   }
