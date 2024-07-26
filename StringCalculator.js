@@ -8,20 +8,28 @@ class StringCalculator {
       return parseInt(numbers);
     }
 
-    const numberArr = this.tokenizeString(numbers);
-
-    const sum = numberArr.reduce(
-      (currSum, num) => (currSum += parseInt(num)),
-      0
-    );
+    const numList = this.tokenizeString(numbers);
+    const sum = numList.reduce((currSum, num) => (currSum += parseInt(num)), 0);
 
     return sum;
   }
 
   tokenizeString(numbers) {
-    const splitRegex = /\n|\,/;
-    const numberArr = numbers.split(splitRegex);
-    return numberArr;
+    let delimiter = ",";
+
+    if (/^\/\/(.*)\n(.*)/.test(numbers)) {
+      const delimiterList = numbers.substring(0, numbers.indexOf("\n"));
+      numbers = numbers.substring(numbers.indexOf("\n") + 1);
+      delimiter = this.seprateDelimiter(delimiterList);
+    }
+
+    const splitRegex = `[^${delimiter}\\n]+`;
+    const numList = numbers.match(new RegExp(splitRegex, "g"));
+    return numList;
+  }
+
+  seprateDelimiter(str) {
+    return str.replace(/[\/\[\]]/g, "");
   }
 }
 
