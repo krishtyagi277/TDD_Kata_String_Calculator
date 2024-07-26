@@ -8,8 +8,7 @@ class StringCalculator {
       return parseInt(numbers);
     }
 
-    const splitRegex = /\n|\,/;
-    const numberArr = numbers.split(splitRegex);
+    const numberArr = this.tokenizeString(numbers);
 
     const sum = numberArr.reduce(
       (currSum, num) => (currSum += parseInt(num)),
@@ -17,6 +16,12 @@ class StringCalculator {
     );
 
     return sum;
+  }
+
+  tokenizeString(numbers) {
+    const splitRegex = /\n|\,/;
+    const numberArr = numbers.split(splitRegex);
+    return numberArr;
   }
 }
 
