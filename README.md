@@ -1,4 +1,18 @@
-TDD Kata 1 - String Calculator is a popular coding exercise designed to practice Test-Driven Development (TDD) principles. The exercise involves implementing a simple string calculator that can take a string of numbers and return their sum. Here's a breakdown of the typical steps involved:
+Steps to run this code:
+
+1. Clone the code in your local machine
+2. npm install
+3. To run the test cases run command: `npm test`
+
+Here, I have used Jest for unit testing.
+
+TDD Kata 1 - String Calculator is a popular coding exercise designed to practice Test-Driven Development (TDD) principles. The exercise involves implementing a simple string calculator that can take a string of numbers and return their sum.
+
+Here I have followed the TDD rules, for each case I have written the test case and after passing the case I have refactore the code.
+
+To fix the bug, I have used a strategy of minimal change required to fix the bug. I believe in writing proper comments/defination of the methods So I have added the proper comments.
+
+Here's a breakdown of the typical steps involved:
 
 \*\*Create a simple String calculator with a method add(String numbers).
 
