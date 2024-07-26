@@ -1,6 +1,6 @@
 class StringCalculator {
   add(numbers) {
-    if (numbers == "" || numbers == " ") {
+    if (numbers == "" || numbers == " " || !numbers) {
       return 0;
     }
 
@@ -9,18 +9,18 @@ class StringCalculator {
     }
 
     const numList = this.tokenizeString(numbers);
-    const negativeValuesStr = this.fiterNegativeValues(numList) || "";
+    const negativeValuesStr = this.getNegativeValuesStr(numList) || "";
 
     if (negativeValuesStr.length > 0) {
       throw new Error(`Negatives not allowed: ${negativeValuesStr}`);
     }
 
-    const sum = numList.reduce((currSum, num) => {
+    const total = numList.reduce((currSum, num) => {
       if (num <= 1000) currSum += num;
       return currSum;
     }, 0);
 
-    return sum;
+    return total;
   }
 
   tokenizeString(numbers) {
@@ -29,7 +29,7 @@ class StringCalculator {
     if (/^\/\/(.*)\n(.*)/.test(numbers)) {
       const delimiterList = numbers.substring(0, numbers.indexOf("\n"));
       numbers = numbers.substring(numbers.indexOf("\n") + 1);
-      delimiter = this.seprateDelimiter(delimiterList);
+      delimiter = this.getDelimiterToSeprateStr(delimiterList);
     }
 
     const splitRegex = `[^${delimiter}\\n]+`;
@@ -40,12 +40,12 @@ class StringCalculator {
     return numList;
   }
 
-  fiterNegativeValues(numList) {
+  getNegativeValuesStr(numList) {
     const negativeValues = numList.filter((num) => num < 0);
     return negativeValues.join(", ");
   }
 
-  seprateDelimiter(str) {
+  getDelimiterToSeprateStr(str) {
     return str.replace(/[\/\[\]]/g, "");
   }
 }
