@@ -1,0 +1,14 @@
+{
+  "name": "tdd_kata_string_calculator",
+  "version": "1.0.0",
+  "description": "tdd kata string calcualtor with Test Driven Developement (TDD)",
+  "main": "StringCalculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "krishna Tyagi",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
