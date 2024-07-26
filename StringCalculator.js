@@ -9,6 +9,12 @@ class StringCalculator {
     }
 
     const numList = this.tokenizeString(numbers);
+    const negativeValueStr = this.fiterNegativeValues(numList) || "";
+
+    if (negativeValueStr.length > 0) {
+      throw new Error(`Negatives not allowed: ${negativeValuesStr}`);
+    }
+
     const sum = numList.reduce((currSum, num) => (currSum += parseInt(num)), 0);
 
     return sum;
@@ -26,6 +32,11 @@ class StringCalculator {
     const splitRegex = `[^${delimiter}\\n]+`;
     const numList = numbers.match(new RegExp(splitRegex, "g"));
     return numList;
+  }
+
+  fiterNegativeValues(numList) {
+    const negativeValues = numList.filter((num) => parseInt(num) < 0);
+    return negativeValues.join(", ");
   }
 
   seprateDelimiter(str) {
