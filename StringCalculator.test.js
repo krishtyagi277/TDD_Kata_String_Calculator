@@ -46,4 +46,8 @@ describe("StringCalculator", () => {
     expect(calculator.add("2,1001")).toBe(2);
     expect(calculator.add("1000,1001")).toBe(1000);
   });
+
+  test("should support multiple delimiters", () => {
+    expect(calculator.add("//[*][%]\n1*2%3")).toBe(6);
+  });
 });
