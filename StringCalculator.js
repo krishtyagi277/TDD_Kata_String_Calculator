@@ -8,7 +8,8 @@ class StringCalculator {
       return parseInt(numbers);
     }
 
-    const numberArr = numbers.split(",");
+    const splitRegex = /\n|\,/;
+    const numberArr = numbers.split(splitRegex);
 
     const sum = numberArr.reduce(
       (currSum, num) => (currSum += parseInt(num)),
