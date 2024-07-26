@@ -44,3 +44,6 @@ For example, add("1,2,3,4") should return 10.
 8.  Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[\*][%]\n1\*2%3” should return 6.
     ————————————————————————————————
 9.  make sure you can also handle multiple delimiters with length longer than one char
+
+![image](https://github.com/user-attachments/assets/f2cbe448-1115-4e6b-87e1-869ca6b7f4d6)
+
